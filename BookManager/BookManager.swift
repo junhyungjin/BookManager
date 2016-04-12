@@ -12,12 +12,20 @@ class BookManager {
     var bookList = [Book]()
     
     func addBook(BookObject: Book) {
+        bookList += [BookObject]
         
     }
     
-//    func showAllBook() -> String {
-//    
-//    }
+    func showAllBook() -> String {
+        var strTemp = ""
+        for bookTemp in bookList {
+            strTemp += "Name : \(bookTemp.name)\n"
+            strTemp += "Genre : \(bookTemp.genre)\n"
+            strTemp += "Author : \(bookTemp.author)\n"
+            strTemp += "------------------------------\n"
+        }
+        return strTemp
+    }
 //    
 //    func countBook() -> Int {
 //        
