@@ -29,3 +29,10 @@ myBook.addBook(book2)
 myBook.addBook(book3)
 
 print(myBook.showAllBook())
+print(myBook.countBook())
+
+var findResult = myBook.findBook("죄와 벌")
+print(findResult!)
+
+myBook.removeBook("암호의 해석")
+print(myBook.showAllBook())

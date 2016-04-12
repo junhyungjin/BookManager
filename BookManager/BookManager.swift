@@ -26,16 +26,33 @@ class BookManager {
         }
         return strTemp
     }
-//    
-//    func countBook() -> Int {
-//        
-//    }
-//    
-//    func findBook(name: String) -> String? {
-//        
-//    }
-//    
-//    func removeBook(name: String) {
-//        
-//    }
+
+    func countBook() -> Int {
+        return bookList.count
+    }
+    
+    func findBook(name: String) -> String? {
+        var strTemp = ""
+        for bookTemp in bookList {
+            if bookTemp.name == name {
+                strTemp += "Name : \(bookTemp.name)\n"
+                strTemp += "Genre : \(bookTemp.genre)\n"
+                strTemp += "Author : \(bookTemp.author)\n"
+                strTemp += "------------------------------\n"
+                return strTemp
+            }
+        }
+        return nil
+    }
+    
+    func removeBook(name: String) {
+        for bookTemp in bookList {
+            if bookTemp.name == name {
+                let index = (bookList as NSArray).indexOfObject(bookTemp)
+                bookList.removeAtIndex(index)
+                showAllBook()
+            }
+        }
+        
+    }
 }
